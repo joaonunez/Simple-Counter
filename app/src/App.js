@@ -35,10 +35,15 @@ const App = () => {
     setIsReversing(!isReversing);
     setIsRunning(true);
   };
+  const handledeleteReverse = () =>{
+    setIsReversing(false);
+    setIsRunning(true);
+  }
 
   const handleSetValor = (valor) => {
     setSeconds(valor);
     setIsRunning(false);  // Detener el contador al establecer un nuevo valor
+    
     
   };
 
@@ -51,6 +56,7 @@ const App = () => {
         onPlay={handlePlay} 
         onReverse={handleReverse} // Agregar la función de reversa
         setValor={handleSetValor} 
+        deleteReverse={handledeleteReverse}
       />
     </div>
   );
