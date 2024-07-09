@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
   faStop,
-  faRefresh,
-  faBackward,
-  faDeleteLeft,
-  faBan,
+  faRefresh
 } from "@fortawesome/free-solid-svg-icons";
 export function FormularioContador({
   onStop,
