@@ -5,20 +5,23 @@ import { FormularioContador } from './components/FormularioContador';
 const App = () => {
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
+  const [isReversing, setIsReversing] = useState(false);
 
   useEffect(() => {
     if (!isRunning) return;
 
     const interval = setInterval(() => {
-      setSeconds(prevSeconds => prevSeconds + 1);
+      setSeconds(prevSeconds => isReversing ? prevSeconds - 1 : prevSeconds + 1);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isRunning]);
+  }, [isRunning, isReversing]);
 
   const handleStop = () => {
     setIsRunning(false);
+    setIsReversing(false);
   };
+
   const handlePlay = () => {
     setIsRunning(true);
   };
@@ -28,10 +31,27 @@ const App = () => {
     setIsRunning(true);
   };
 
+  const handleReverse = () => {
+    setIsReversing(!isReversing);
+    setIsRunning(true);
+  };
+
+  const handleSetValor = (valor) => {
+    setSeconds(valor);
+    setIsRunning(false);  // Detener el contador al establecer un nuevo valor
+    
+  };
+
   return (
     <div>
       <ContadorSegundos seconds={seconds} />
-      <FormularioContador onStop={handleStop} onReset={handleReset} onPlay={handlePlay} />
+      <FormularioContador 
+        onStop={handleStop} 
+        onReset={handleReset} 
+        onPlay={handlePlay} 
+        onReverse={handleReverse} // Agregar la función de reversa
+        setValor={handleSetValor} 
+      />
     </div>
   );
 };
