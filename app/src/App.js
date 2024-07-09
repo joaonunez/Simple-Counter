@@ -35,7 +35,7 @@ const App = () => {
     setIsReversing(!isReversing);
     setIsRunning(true);
   };
-  const handledeleteReverse = () =>{
+  const handleDeleteReverse = () =>{
     setIsReversing(false);
     setIsRunning(true);
   }
@@ -56,7 +56,7 @@ const App = () => {
         onPlay={handlePlay} 
         onReverse={handleReverse} // Agregar la función de reversa
         setValor={handleSetValor} 
-        deleteReverse={handledeleteReverse}
+        deleteReverse={handleDeleteReverse}
       />
     </div>
   );
