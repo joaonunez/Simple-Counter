@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ContadorSegundos from './components/ContadorSegundos';
+import { FormularioContador } from './components/FormularioContador';
 
 const App = () => {
   const [seconds, setSeconds] = useState(0);
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div>
       <ContadorSegundos seconds={seconds} />
+      <FormularioContador></FormularioContador>
     </div>
   );
 };
