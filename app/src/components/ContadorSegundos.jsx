@@ -1,7 +1,7 @@
 import React from 'react';
 const ContadorSegundos = ({ seconds }) => {
   const formatSeconds = (seconds) => {
-    return String(seconds).padStart(6, '0');
+    return String(seconds).padStart(6,'0');
   };
 
   const formattedSeconds = formatSeconds(seconds).split('');
