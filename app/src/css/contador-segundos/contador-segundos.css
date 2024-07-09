@@ -1,0 +1,23 @@
+.counter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .digit-card {
+    width: 3rem;
+    height: 5rem;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  
+  .digit-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

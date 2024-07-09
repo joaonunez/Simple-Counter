@@ -1,6 +1,4 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
 import ContadorSegundos from './components/ContadorSegundos';
 
 const App = () => {
@@ -8,14 +6,14 @@ const App = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds((prev) => prev + 1);
+      setSeconds(prevSeconds => prevSeconds + 1);
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="app">
+    <div>
       <ContadorSegundos seconds={seconds} />
     </div>
   );
